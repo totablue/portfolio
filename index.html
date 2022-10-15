@@ -12,6 +12,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/imgs/favicon.svg" type="image/x-icon">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="/assets/js/script.js" async></script>
@@ -26,7 +28,7 @@
         </a>
       </h1>
 
-      <aside class="mobile-nav">
+      <div class="desktop-only">
         <ul class="nav-links">
           <li class="nav-link"><a href="#">Home</a></li>
           <li class="nav-link"><a href="#">About Me</a></li>
@@ -34,19 +36,36 @@
           <li class="nav-link"><a href="#">Work Flow</a></li>
           <li class="nav-link"><a href="#">Contact</a></li>
         </ul>
-      </aside>
-      <div class="hamburger">
-        <span class="bar"><i class="fa-solid fa-burger"></i></span>
+      </div>
+
+      <div class="mobile-only">
+        <aside class="mobile-nav">
+          <ul class="nav-links">
+            <li class="nav-link"><a href="#">Home</a></li>
+            <li class="nav-link"><a href="#">About Me</a></li>
+            <li class="nav-link"><a href="#">My Projects</a></li>
+            <li class="nav-link"><a href="#">Work Flow</a></li>
+            <li class="nav-link"><a href="#">Contact</a></li>
+          </ul>
+        </aside>
+        <div class="hamburger">
+          <span class="bar"></span>
+        </div>
       </div>
     </nav>
   </header>
 
   <main>
-    <div class="header-content">
+    <section class="hero-content">
       <h3>Hi, my name is</h3>
-      <h1>Tomoki Ota.</h1>
+      <h1>Tomo.</h1>
       <h2>I build things for the web.</h3>
-    </div>
+        <p>
+          I am a self taught web developer building things on the web for you. I will be taking on everything from
+          designing, coding, and deploying the website so you can focus on what's important for you.
+        </p>
+        <a href="#" class="contact-link">Contact Me!</a>
+    </section>
   </main>
 
 </body>
