@@ -3,6 +3,7 @@ Dark BG color: #1e293b
 Main Font color: #94A3B8
 Accent color: #22d3ee
 Header Font color: #f8fafc
+Card color: #0a0e14
 */
 
 :root {
@@ -11,6 +12,7 @@ Header Font color: #f8fafc
     --main-font-color: #94a3b8;
     --accent-color: #22d3ee;
     --header-font-color: #f8fafc;
+    --card-color: #0a0e14;
 }
 
 * {
@@ -27,7 +29,7 @@ html {
 
 body {
     background-color: var(--main-bg-color);
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     letter-spacing: 0.075rem;
     line-height: 1.3;
 }
@@ -238,7 +240,7 @@ main.blur > * {
 }
 
 .hero-content p {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin: 20px 0 0;
     max-width: 540px;
 }
@@ -324,6 +326,71 @@ ul.about-skills .skill::before {
 }
 
 .about-img img {
+    width: 100%;
+}
+
+.work-cards {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.work-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card-color);
+    border-radius: 40px;
+    margin: 2rem 0px;
+    padding: 40px 20px;
+}
+
+.work-card .left {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.work-card .left .top h4 {
+    color: var(--accent-color);
+    margin: 10px 0px;
+    font-size: 1.3rem;
+}
+
+.work-card .left .top h3 {
+    color: var(--header-font-color);
+    font-size: clamp(22px, 5vw, 28px);
+    margin: 0px 0px 10px;
+    line-height: 1.1;
+}
+
+.work-card-desc {
+    font-size: 1.6rem;
+    padding: 20px 0px;
+}
+
+.work-live-site {
+    display: flex;
+    justify-content: space-between;
+    color: var(--accent-color);
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    padding: 20px 28px;
+    font-size: 1.6rem;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.work-card-img {
+    width: 100%;
+    height: auto;
+    padding-top: 75px;
+}
+
+.work-card-img img {
     width: 100%;
 }
 
