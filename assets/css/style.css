@@ -3,7 +3,7 @@ Dark BG color: #1e293b
 Main Font color: #94A3B8
 Accent color: #22d3ee
 Header Font color: #f8fafc
-Card color: #0a0e14
+Card color: #17202e
 */
 
 :root {
@@ -12,7 +12,7 @@ Card color: #0a0e14
     --main-font-color: #94a3b8;
     --accent-color: #22d3ee;
     --header-font-color: #f8fafc;
-    --card-color: #0a0e14;
+    --card-color: #17202e;
 }
 
 * {
@@ -25,6 +25,7 @@ html {
     font-family: var(--main-font-family);
     font-size: 62.5%;
     color: var(--main-font-color);
+    scroll-padding-top: 100px;
 }
 
 body {
@@ -214,6 +215,10 @@ main.blur > * {
     z-index: -1;
 }
 
+body.blur {
+    overflow: hidden;
+}
+
 .hero-content {
     display: flex;
     -webkit-box-pack: center;
@@ -263,7 +268,7 @@ main.blur > * {
 }
 
 .numbered-heading {
-    font-size: clamp(24px, 5vw, 32px);
+    font-size: clamp(26px, 5vw, 32px);
     position: relative;
     display: flex;
     align-items: center;
@@ -340,9 +345,10 @@ ul.about-skills .skill::before {
     display: flex;
     flex-direction: column;
     background-color: var(--card-color);
-    border-radius: 40px;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     margin: 2rem 0px;
-    padding: 40px 20px;
+    padding: 40px 30px;
 }
 
 .work-card .left {
@@ -394,6 +400,86 @@ ul.about-skills .skill::before {
     width: 100%;
 }
 
+.work-flow-cards {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+}
+
+.work-flow-card {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    background-color: var(--card-color);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    padding: 50px 30px;
+    margin: 2rem 0px;
+    width: 100%;
+}
+
+.work-flow-card i {
+    color: var(--header-font-color);
+    font-size: 25px;
+}
+
+.work-flow-card h3 {
+    color: var(--accent-color);
+    font-size: clamp(22px, 5vw, 28px);
+}
+
+.work-flow-desc {
+    font-size: 1.6rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: var(--card-color);
+    border-radius: 10px;
+    padding: 50px 30px;
+}
+
+.contact-form input {
+    border-radius: 25px;
+    padding: 15px;
+
+    border: 1px solid var(--main-font-color);
+    background: var(--header-font-color);
+    display: block;
+    font-size: 13px;
+    width: 100%;
+    outline: none;
+}
+
+.contact-form textarea {
+    background: var(--header-font-color);
+    border-radius: 25px;
+    padding: 16px 15px;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid var(--accent-color);
+    border: none;
+}
+
+.form-submit {
+    color: var(--accent-color);
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+    border-radius: 25px;
+    padding: 15px;
+    font-size: 1.6rem;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 ul {
     list-style-type: none;
 }
@@ -401,4 +487,8 @@ ul {
 a {
     color: var(--main-font-color);
     text-decoration: none;
+}
+
+section {
+    padding: 60px 0;
 }

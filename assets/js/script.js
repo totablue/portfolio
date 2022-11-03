@@ -3,6 +3,7 @@ const UIHamburgerBar = document.querySelector(
 );
 const UIMobileNav = document.querySelector(".mobile-nav");
 const UIMain = document.querySelector("main");
+const UIBody = document.querySelector("body");
 const UINavLinks = document.querySelectorAll(".nav-link");
 const UIHeader = document.querySelector("header");
 let showMenu = false;
@@ -21,10 +22,12 @@ function toggleMenu() {
         UIHamburgerBar.classList.add("open");
         UIMobileNav.classList.add("open");
         UIMain.classList.add("blur");
+        UIBody.classList.add("blur");
     } else {
         UIHamburgerBar.classList.remove("open");
         UIMobileNav.classList.remove("open");
         UIMain.classList.remove("blur");
+        UIBody.classList.remove("blur");
     }
     showMenu = !showMenu;
 }
@@ -35,6 +38,7 @@ for (let i = 0; i < UINavLinks.length; i++) {
         UIHamburgerBar.classList.remove("open");
         UIMobileNav.classList.remove("open");
         UIMain.classList.remove("blur");
+        UIBody.classList.remove("blur");
         showMenu = false;
     });
 }
