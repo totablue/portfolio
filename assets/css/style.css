@@ -470,35 +470,82 @@ ul.about-skills .skill::before {
 .contact-form {
     display: flex;
     flex-direction: column;
+    gap: 25px;
     background: var(--card-color);
     border-radius: 10px;
     padding: 50px 30px;
     margin-bottom: 50px;
 }
 
-.contact-form input {
-    border-radius: 25px;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid var(--main-font-color);
-    background: var(--header-font-color);
+.contact-form .input-group input {
+    color: var(--main-font-color);
+    padding: 15px 10px 5px 10px;
+    border: none;
+    border-bottom: 1px solid var(--main-font-color);
+    background: transparent;
     display: block;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     width: 100%;
     outline: none;
 }
 
-.contact-form textarea {
-    background: var(--header-font-color);
-    border-radius: 25px;
-    padding: 16px 15px;
-    margin-bottom: 20px;
-    outline: none;
+.input-group {
+    position: relative;
 }
 
-.contact-form input:focus,
+.input-group label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    font-size: 1.4rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.contact-form .input-group input:focus,
+.contact-form .input-group input:active {
+    outline: none;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.contact-form .input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    top: -5px;
+}
+
+.textarea-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.textarea-group label {
+    padding: 0 10px;
+    font-size: 1.4rem;
+}
+
+.contact-form textarea {
+    background: transparent;
+    color: var(--main-font-color);
+    border-radius: 10px;
+    padding: 16px 10px;
+    border: 1px solid var(--main-font-color);
+    width: 100%;
+    outline: none;
+    font-size: 1.6rem;
+    font-family: var(--main-font-family);
+}
+
+.contact-form .textarea-group label:has(+ textarea:focus),
+.contact-form .textarea-group label:has(+ textarea:active),
+.contact-form .textarea-group label:has(+ textarea:not(:placeholder-shown)) {
+    color: var(--accent-color);
+}
+
 .contact-form textarea:focus {
-    outline: 2px solid var(--accent-color);
+    outline: 1px solid var(--accent-color);
     border: none;
 }
 
@@ -513,12 +560,17 @@ ul.about-skills .skill::before {
     background-color: transparent;
     border: 1px solid var(--accent-color);
     border-radius: 4px;
-    padding: 20px 28px;
+    padding: 15px 23px;
     margin-inline: auto;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 1;
     text-decoration: none;
     cursor: pointer;
+}
+
+.form-submit:focus,
+.form-submit:active {
+    outline: none;
 }
 
 footer {
@@ -693,6 +745,7 @@ section {
 
     .desktop-only .nav-links .nav-link:last-of-type a {
         border: 1px solid var(--accent-color);
+        color: var(--accent-color);
         border-radius: 4px;
         padding: 8px 18px;
         transition: all 0.2s ease-in-out;
@@ -700,12 +753,10 @@ section {
 
     .desktop-only .nav-links .nav-link:last-of-type a:hover {
         background-color: var(--accent-color);
-    }
-
-    .desktop-only .nav-links .nav-link:last-of-type a:hover {
         color: var(--main-bg-color);
     }
 
+    /* Removes the numbering from button */
     .desktop-only .nav-links .nav-link:last-of-type::before {
         content: "";
     }
@@ -781,12 +832,6 @@ section {
     .contact-form {
         max-width: 750px;
         margin-inline: auto;
-    }
-
-    .input-group {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
     }
 
     .footer-socials {
