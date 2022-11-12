@@ -37,6 +37,7 @@ body {
     font-size: 1.6rem;
     letter-spacing: 0.075rem;
     line-height: 1.5;
+    min-height: 100vh;
 }
 
 header {
@@ -56,7 +57,7 @@ header.box-shadow {
     box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.25);
 }
 
-header .desktop-only {
+.desktop-only {
     display: none;
 }
 
@@ -258,13 +259,15 @@ body.blur {
     max-width: 540px;
 }
 
-.hero-content .contact-link {
+.cta {
+    display: inline-block;
     color: var(--accent-color);
     background-color: transparent;
     border: 1px solid var(--accent-color);
     border-radius: 4px;
     padding: 20px 28px;
     font-size: 1.6rem;
+    font-weight: 500;
     line-height: 1;
     text-decoration: none;
     cursor: pointer;
@@ -413,6 +416,7 @@ ul.about-skills .skill::before {
     border-radius: 4px;
     padding: 20px 28px;
     font-size: 1.6rem;
+    font-weight: 500;
     line-height: 1;
     text-decoration: none;
     cursor: pointer;
@@ -565,6 +569,7 @@ ul.about-skills .skill::before {
     padding: 15px 23px;
     margin-inline: auto;
     font-size: 1.4rem;
+    font-weight: 500;
     line-height: 1;
     text-decoration: none;
     cursor: pointer;
@@ -703,6 +708,38 @@ section {
     background-color: var(--accent-color);
 }
 
+/* Thank you page */
+
+.thankyou-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.thankyou-content {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.thankyou-img {
+    width: 30%;
+}
+
+.thankyou-content h1 {
+    font-size: 3.3rem;
+}
+
+.thankyou-content .cta {
+    margin-top: 30px;
+}
+
 @media only screen and (min-width: 769px) {
     main {
         padding: 0 100px;
@@ -712,11 +749,11 @@ section {
         padding: 0 40px;
     }
 
-    header .mobile-only {
+    .mobile-only {
         display: none;
     }
 
-    header .desktop-only {
+    .desktop-only {
         display: block;
     }
 
